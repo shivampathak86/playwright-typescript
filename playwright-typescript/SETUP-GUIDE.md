@@ -52,7 +52,7 @@ This creates a `package.json` file with default settings.
 ### Step 3: Install Framework and Dependencies
 
 ```bash
-npm install @leadventure/ari-automation-framework @playwright/test
+npm install @shivam/playwright-typescript @playwright/test
 ```
 
 ### Step 4: Install Playwright Browsers
@@ -194,8 +194,8 @@ Add scripts section:
 Create `src/pages/login-page.ts`:
 
 ```typescript
-import { BasePage } from '@leadventure/ari-automation-framework';
-import { IParallelConfig } from '@leadventure/ari-automation-framework';
+import { BasePage } from '@shivam/playwright-typescript';
+import { IParallelConfig } from '@shivam/playwright-typescript';
 
 export class LoginPage extends BasePage {
   private readonly usernameInput = 'input[name="username"]';
@@ -228,7 +228,7 @@ export class LoginPage extends BasePage {
 Create `src/tests/login.spec.ts`:
 
 ```typescript
-import { test, expect } from '@leadventure/ari-automation-framework';
+import { test, expect } from '@shivam/playwright-typescript';
 import { LoginPage } from '../pages/login-page';
 
 test.describe('Login Tests', () => {
@@ -279,7 +279,7 @@ ENABLE_LOGGING=true
 In your code, use the `Settings` class:
 
 ```typescript
-import { Settings } from '@leadventure/ari-automation-framework';
+import { Settings } from '@shivam/playwright-typescript';
 
 // Initialize settings from environment
 Settings.initialize();
@@ -399,8 +399,8 @@ npx playwright install
 
 - 📖 [Framework Documentation](./FRAMEWORK-CONSTITUTION.md)
 - 📚 [Playwright Documentation](https://playwright.dev/)
-- 🐛 [Report Issues](https://github.com/leadventure/ari-automation-framework/issues)
-- 💬 [Discussions](https://github.com/leadventure/ari-automation-framework/discussions)
+- 🐛 [Report Issues](https://github.com/shivam/playwright-typescript/issues)
+- 💬 [Discussions](https://github.com/shivam/playwright-typescript/discussions)
 
 ---
 

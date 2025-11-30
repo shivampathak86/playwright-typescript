@@ -73,7 +73,7 @@ Welcome to the Shivam Playwright-Typescript documentation. This index will help 
 ## 📁 Project Structure
 
 ```
-ari-automation-framework/
+shivam-playwright-typescript/
 ├── Documentation
 │   ├── INDEX.md                      ← You are here
 │   ├── README.md                     ← Start here
@@ -212,7 +212,7 @@ ari-automation-framework/
 - **Playwright Documentation**: https://playwright.dev/
 - **TypeScript Documentation**: https://www.typescriptlang.org/
 - **npm Documentation**: https://docs.npmjs.com/
-- **GitHub Repository**: https://github.com/leadventure/ari-automation-framework
+- **GitHub Repository**: https://github.com/shivam/playwright-typescript
 
 ## 💡 Tips
 
@@ -231,10 +231,10 @@ ari-automation-framework/
 
 ### Issues
 - Check [SETUP-GUIDE.md - Troubleshooting](./SETUP-GUIDE.md#troubleshooting)
-- Report issues on GitHub: https://github.com/leadventure/ari-automation-framework/issues
+- Report issues on GitHub: https://github.com/shivam/playwright-typescript/issues
 
 ### Community
-- GitHub Discussions: https://github.com/leadventure/ari-automation-framework/discussions
+- GitHub Discussions: https://github.com/shivam/playwright-typescript/discussions
 - Playwright Community: https://github.com/microsoft/playwright/discussions
 
 ## 📝 Document Versions
@@ -252,6 +252,6 @@ ari-automation-framework/
 
 **Framework Version**: 2.0.5  
 **Last Updated**: November 2024  
-**Maintained by**: LeadVenture
+**Maintained by**: Shivam
 
 **Start here**: [README.md](./README.md) → [SETUP-GUIDE.md](./SETUP-GUIDE.md) → [QUICK-REFERENCE.md](./QUICK-REFERENCE.md) → [FRAMEWORK-CONSTITUTION.md](./FRAMEWORK-CONSTITUTION.md)

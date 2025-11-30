@@ -8,7 +8,7 @@ Follow these exact commands to create your GitHub repository and publish the fra
 
 ```bash
 # Navigate to the framework folder
-cd ari-automation-framework-ts
+cd shivam-playwright-typescript
 
 # Initialize git repository
 git init
@@ -30,7 +30,7 @@ git log
 ### Option A: Using GitHub Web Interface
 
 1. Go to https://github.com/new
-2. **Repository name**: `ari-automation-framework`
+2. **Repository name**: `shivam-playwright-typescript`
 3. **Description**: "Enterprise-grade automation framework built on Playwright and TypeScript"
 4. **Visibility**: Choose Public or Private
 5. **Initialize repository**: Leave unchecked (we have existing code)

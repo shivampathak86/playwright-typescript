@@ -1,6 +1,6 @@
 # Shivam Playwright-Typescript
 
-[![npm version](https://img.shields.io/npm/v/@leadventure/shivam-playwright-typescript.svg)](https://www.npmjs.com/package/@leadventure/shivam-playwright-typescript)
+[![npm version](https://img.shields.io/npm/v/@shivam/playwright-typescript.svg)](https://www.npmjs.com/package/@shivam/playwright-typescript)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 An enterprise-grade test automation framework built on **Playwright** and **TypeScript**. Designed for scalable, maintainable test automation with support for BDD, parallel execution, and comprehensive reporting.
@@ -21,7 +21,7 @@ An enterprise-grade test automation framework built on **Playwright** and **Type
 ### Installation
 
 ```bash
-npm install @leadventure/ari-automation-framework @playwright/test
+npm install @shivam/playwright-typescript @playwright/test
 npx playwright install
 ```
 
@@ -30,8 +30,8 @@ npx playwright install
 1. **Create a Page Object**
 
 ```typescript
-import { BasePage } from '@leadventure/ari-automation-framework';
-import { IParallelConfig } from '@leadventure/ari-automation-framework';
+import { BasePage } from '@shivam/playwright-typescript';
+import { IParallelConfig } from '@shivam/playwright-typescript';
 
 export class LoginPage extends BasePage {
   private readonly usernameInput = 'input[name="username"]';
@@ -53,7 +53,7 @@ export class LoginPage extends BasePage {
 2. **Write a Test**
 
 ```typescript
-import { test, expect } from '@leadventure/ari-automation-framework';
+import { test, expect } from '@shivam/playwright-typescript';
 import { LoginPage } from './pages/login-page';
 
 test('should login successfully', async ({ parallelConfig }) => {
@@ -189,7 +189,7 @@ step.assertContains(text, substring, message);
 ### Logger
 
 ```typescript
-import { Logger } from '@leadventure/ari-automation-framework';
+import { Logger } from '@shivam/playwright-typescript';
 
 Logger.info('Test started');
 Logger.debug('Debug information');
@@ -218,8 +218,8 @@ MIT License - See [LICENSE](./LICENSE) file for details
 ## Support
 
 - 📖 [Documentation](./FRAMEWORK-CONSTITUTION.md)
-- 🐛 [Report Issues](https://github.com/leadventure/ari-automation-framework/issues)
-- 💬 [Discussions](https://github.com/leadventure/ari-automation-framework/discussions)
+- 🐛 [Report Issues](https://github.com/shivam/playwright-typescript/issues)
+- 💬 [Discussions](https://github.com/shivam/playwright-typescript/discussions)
 
 ## Version History
 
@@ -232,5 +232,5 @@ MIT License - See [LICENSE](./LICENSE) file for details
 
 ---
 
-**Maintained by**: LeadVenture  
+**Maintained by**: Shivam  
 **Last Updated**: November 2024

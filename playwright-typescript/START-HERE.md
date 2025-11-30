@@ -8,14 +8,14 @@ Welcome! Your automation framework has been successfully converted from C# .NET 
 
 ### 1. Install Dependencies
 ```bash
-npm install @leadventure/ari-automation-framework @playwright/test
+npm install @shivam/playwright-typescript @playwright/test
 npx playwright install
 ```
 
 ### 2. Create Your First Test
 ```typescript
-import { test, expect } from '@leadventure/ari-automation-framework';
-import { BasePage } from '@leadventure/ari-automation-framework';
+import { test, expect } from '@shivam/playwright-typescript';
+import { BasePage } from '@shivam/playwright-typescript';
 
 class MyPage extends BasePage {
   async navigateToHome() {
@@ -97,8 +97,8 @@ npm test
 
 ### Create a Page Object
 ```typescript
-import { BasePage } from '@leadventure/ari-automation-framework';
-import { IParallelConfig } from '@leadventure/ari-automation-framework';
+import { BasePage } from '@shivam/playwright-typescript';
+import { IParallelConfig } from '@shivam/playwright-typescript';
 
 export class LoginPage extends BasePage {
   private readonly usernameInput = 'input[name="username"]';
@@ -119,7 +119,7 @@ export class LoginPage extends BasePage {
 
 ### Write a Test
 ```typescript
-import { test, expect } from '@leadventure/ari-automation-framework';
+import { test, expect } from '@shivam/playwright-typescript';
 import { LoginPage } from './pages/login-page';
 
 test('should login successfully', async ({ parallelConfig }) => {
@@ -227,8 +227,8 @@ ENVIRONMENT=dev
 - 📦 [npm Docs](https://docs.npmjs.com/)
 
 ### Issues
-- 🐛 [Report Issues](https://github.com/leadventure/ari-automation-framework/issues)
-- 💬 [Discussions](https://github.com/leadventure/ari-automation-framework/discussions)
+- 🐛 [Report Issues](https://github.com/shivam/playwright-typescript/issues)
+- 💬 [Discussions](https://github.com/shivam/playwright-typescript/discussions)
 
 ---
 
@@ -258,6 +258,6 @@ Everything is set up and ready to go. Choose your path above and get started!
 **Framework Version**: 2.0.5  
 **Last Updated**: November 2024  
 **License**: MIT  
-**Maintained by**: LeadVenture
+**Maintained by**: Shivam
 
 Happy testing! 🚀
