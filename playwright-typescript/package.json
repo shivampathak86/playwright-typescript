@@ -1,0 +1,52 @@
+{
+  "name": "@leadventure/ari-automation-framework",
+  "version": "2.0.5",
+  "description": "Enterprise-grade automation framework built on Playwright and TypeScript. Designed for scalable, maintainable test automation with support for BDD, parallel execution, and comprehensive reporting.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "automation",
+    "testing",
+    "playwright",
+    "typescript",
+    "bdd",
+    "e2e",
+    "framework"
+  ],
+  "author": "Piyush Jain",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leadventure/ari-automation-framework"
+  },
+  "bugs": {
+    "url": "https://github.com/leadventure/ari-automation-framework/issues"
+  },
+  "homepage": "https://github.com/leadventure/ari-automation-framework#readme",
+  "peerDependencies": {
+    "@playwright/test": "^1.40.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "winston": "^3.11.0"
+  }
+}
