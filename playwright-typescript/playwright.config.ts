@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 /**
- * Playwright configuration for the ARI Automation Framework
+ * Playwright configuration for the Shivam Playwright-Typescript
  * Supports multiple browsers, parallel execution, and comprehensive reporting
  */
 export default defineConfig({

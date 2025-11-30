@@ -1,4 +1,4 @@
-# ARI Automation Framework - Framework Constitution
+# Shivam Playwright-Typescript - Framework Constitution
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@
 
 ## Overview
 
-The ARI Automation Framework is an enterprise-grade test automation framework built on **Playwright** and **TypeScript**. It provides a robust, scalable, and maintainable foundation for building comprehensive test automation solutions.
+The Shivam Playwright-Typescript is an enterprise-grade test automation framework built on **Playwright** and **TypeScript**. It provides a robust, scalable, and maintainable foundation for building comprehensive test automation solutions.
 
 ### Key Features
 

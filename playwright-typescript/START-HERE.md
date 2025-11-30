@@ -1,4 +1,4 @@
-# 🚀 ARI Automation Framework - START HERE
+# 🚀 Shivam Playwright-Typescript - START HERE
 
 Welcome! Your automation framework has been successfully converted from C# .NET to TypeScript Playwright.
 

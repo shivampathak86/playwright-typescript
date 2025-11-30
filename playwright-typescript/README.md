@@ -1,6 +1,6 @@
-# ARI Automation Framework
+# Shivam Playwright-Typescript
 
-[![npm version](https://img.shields.io/npm/v/@leadventure/ari-automation-framework.svg)](https://www.npmjs.com/package/@leadventure/ari-automation-framework)
+[![npm version](https://img.shields.io/npm/v/@leadventure/shivam-playwright-typescript.svg)](https://www.npmjs.com/package/@leadventure/shivam-playwright-typescript)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 An enterprise-grade test automation framework built on **Playwright** and **TypeScript**. Designed for scalable, maintainable test automation with support for BDD, parallel execution, and comprehensive reporting.

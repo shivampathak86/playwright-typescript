@@ -1,6 +1,6 @@
 # Migration to Repository Guide
 
-This folder contains the complete ARI Automation Framework (TypeScript/Playwright version) ready to be extracted into a new repository.
+This folder contains the complete Shivam Playwright-Typescript (TypeScript/Playwright version) ready to be extracted into a new repository.
 
 ## 📦 What's Included
 
@@ -53,7 +53,7 @@ ari-automation-framework-ts/
 cd ari-automation-framework-ts
 git init
 git add .
-git commit -m "Initial commit: ARI Automation Framework v2.0.5"
+git commit -m "Initial commit: Shivam Playwright-Typescript v2.0.5"
 ```
 
 ### 3. Add Remote and Push

@@ -1,5 +1,5 @@
 /**
- * ARI Automation Framework - Main Entry Point
+ * Shivam Playwright-Typescript - Main Entry Point
  * 
  * A comprehensive, enterprise-grade automation framework built on Playwright and TypeScript.
  * Provides a robust foundation for building scalable, maintainable test automation solutions.

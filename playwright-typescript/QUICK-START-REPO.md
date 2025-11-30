@@ -17,7 +17,7 @@ git init
 git add .
 
 # Create initial commit
-git commit -m "Initial commit: ARI Automation Framework v2.0.5"
+git commit -m "Initial commit: Shivam Playwright-Typescript v2.0.5"
 
 # Verify
 git log

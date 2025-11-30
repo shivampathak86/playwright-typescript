@@ -1,4 +1,4 @@
-# ARI Automation Framework - Project Summary
+# Shivam Playwright-Typescript - Project Summary
 
 ## ✅ Conversion Complete
 
@@ -407,7 +407,7 @@ npm install @leadventure/ari-automation-framework
 
 ## 🎉 You're All Set!
 
-The ARI Automation Framework is ready to use. Start with:
+The Shivam Playwright-Typescript is ready to use. Start with:
 
 1. **[README.md](./README.md)** - Quick overview
 2. **[SETUP-GUIDE.md](./SETUP-GUIDE.md)** - Installation

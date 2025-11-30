@@ -1,4 +1,4 @@
-# ARI Automation Framework - Setup Guide
+# Shivam Playwright-Typescript - Setup Guide
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@
 
 ## Prerequisites
 
-Before setting up the ARI Automation Framework, ensure you have:
+Before setting up the Shivam Playwright-Typescript, ensure you have:
 
 - **Node.js**: Version 16 or higher
   - Download from: https://nodejs.org/

@@ -1,5 +1,5 @@
 /**
- * Type definitions for the ARI Automation Framework
+ * Type definitions for the Shivam Playwright-Typescript
  */
 
 import { Page, BrowserContext } from '@playwright/test';

@@ -1,4 +1,4 @@
-# ARI Automation Framework - Quick Reference
+# Shivam Playwright-Typescript - Quick Reference
 
 ## Installation
 

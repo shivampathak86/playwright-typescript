@@ -1,6 +1,6 @@
-# ARI Automation Framework - Documentation Index
+# Shivam Playwright-Typescript - Documentation Index
 
-Welcome to the ARI Automation Framework documentation. This index will help you navigate all available resources.
+Welcome to the Shivam Playwright-Typescript documentation. This index will help you navigate all available resources.
 
 ## 📚 Documentation Files
 
