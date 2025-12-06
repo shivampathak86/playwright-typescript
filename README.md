@@ -1,7 +1,8 @@
 # Playwright TypeScript Framework
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![npm version](https://img.shields.io/npm/v/@shivam/playwright-typescript.svg)](https://www.npmjs.com/package/@shivam/playwright-typescript)
+[![npm version](https://img.shields.io/npm/v/@shivampathak86/playwright-typescript.svg)](https://www.npmjs.com/package/@shivampathak86/playwright-typescript)
+[![npm downloads](https://img.shields.io/npm/dm/@shivampathak86/playwright-typescript.svg)](https://www.npmjs.com/package/@shivampathak86/playwright-typescript)
 
 A modern, scalable test automation framework built on **Playwright** and **TypeScript**. Designed for maintainable test automation with support for Page Object Model, parallel execution, and comprehensive reporting.
 
