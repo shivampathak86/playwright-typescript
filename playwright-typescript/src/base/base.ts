@@ -3,9 +3,9 @@
  * Provides common functionality and utilities for pages and steps
  */
 
-import { IParallelConfig } from '@types/index';
+import type { IParallelConfig } from '../types';
 import { DriverContext } from './driver-context';
-import { Logger } from '@helpers/logger';
+import { Logger } from '../helpers/logger';
 
 /**
  * Base class that serves as the foundation for all page and step classes

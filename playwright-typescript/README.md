@@ -1,19 +1,16 @@
-# Shivam Playwright-Typescript
+# Playwright TypeScript Framework
 
-[![npm version](https://img.shields.io/npm/v/@shivam/playwright-typescript.svg)](https://www.npmjs.com/package/@shivam/playwright-typescript)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-An enterprise-grade test automation framework built on **Playwright** and **TypeScript**. Designed for scalable, maintainable test automation with support for BDD, parallel execution, and comprehensive reporting.
+A modern, scalable test automation framework built on **Playwright** and **TypeScript**. Designed for maintainable test automation with support for Page Object Model, parallel execution, and comprehensive reporting.
 
 ## Features
 
 ✨ **Playwright-based** - Cross-browser automation with Chromium, Firefox, and WebKit  
 🎯 **Page Object Model** - Built-in support for POM pattern  
-📝 **BDD Ready** - Seamless integration with BDD frameworks  
 ⚡ **Parallel Execution** - Run tests in parallel for faster feedback  
 📊 **Comprehensive Logging** - Built-in logging and reporting  
 🔧 **Configuration Management** - Flexible environment-based configuration  
-📦 **NPM Package** - Easy distribution and consumption  
 🏗️ **TypeScript** - Full TypeScript support with strict type checking  
 
 ## Quick Start
@@ -21,7 +18,7 @@ An enterprise-grade test automation framework built on **Playwright** and **Type
 ### Installation
 
 ```bash
-npm install @shivam/playwright-typescript @playwright/test
+npm install @playwright/test
 npx playwright install
 ```
 
@@ -30,22 +27,19 @@ npx playwright install
 1. **Create a Page Object**
 
 ```typescript
-import { BasePage } from '@shivam/playwright-typescript';
-import { IParallelConfig } from '@shivam/playwright-typescript';
+import { Page } from '@playwright/test';
 
-export class LoginPage extends BasePage {
-  private readonly usernameInput = 'input[name="username"]';
-  private readonly passwordInput = 'input[name="password"]';
-  private readonly loginButton = 'button[type="submit"]';
+export class LoginPage {
+  constructor(private page: Page) {}
 
-  constructor(parallelConfig: IParallelConfig) {
-    super(parallelConfig);
+  async navigateTo() {
+    await this.page.goto('/login');
   }
 
-  async login(username: string, password: string): Promise<void> {
-    await this.fillText(this.usernameInput, username);
-    await this.fillText(this.passwordInput, password);
-    await this.click(this.loginButton);
+  async login(username: string, password: string) {
+    await this.page.fill('input[name="username"]', username);
+    await this.page.fill('input[name="password"]', password);
+    await this.page.click('button[type="submit"]');
   }
 }
 ```
@@ -53,15 +47,15 @@ export class LoginPage extends BasePage {
 2. **Write a Test**
 
 ```typescript
-import { test, expect } from '@shivam/playwright-typescript';
+import { test, expect } from '@playwright/test';
 import { LoginPage } from './pages/login-page';
 
-test('should login successfully', async ({ parallelConfig }) => {
-  const loginPage = new LoginPage(parallelConfig);
-  await loginPage.navigateTo('/login');
+test('should login successfully', async ({ page }) => {
+  const loginPage = new LoginPage(page);
+  await loginPage.navigateTo();
   await loginPage.login('user@example.com', 'password123');
   
-  expect(loginPage.getCurrentUrl()).toContain('/dashboard');
+  expect(page.url()).toContain('/dashboard');
 });
 ```
 
@@ -98,34 +92,74 @@ my-automation-project/
 └── package.json
 ```
 
-## Documentation
+## Installation
 
-For comprehensive documentation, see [FRAMEWORK-CONSTITUTION.md](./FRAMEWORK-CONSTITUTION.md)
+### Prerequisites
 
-### Key Topics
+- **Node.js** 16+ ([Download](https://nodejs.org/))
+- **npm** 7+ (comes with Node.js)
 
-- [Architecture](./FRAMEWORK-CONSTITUTION.md#architecture)
-- [Core Components](./FRAMEWORK-CONSTITUTION.md#core-components)
-- [Installation & Setup](./FRAMEWORK-CONSTITUTION.md#installation--setup)
-- [Configuration](./FRAMEWORK-CONSTITUTION.md#configuration)
-- [Usage Guide](./FRAMEWORK-CONSTITUTION.md#usage-guide)
-- [Best Practices](./FRAMEWORK-CONSTITUTION.md#best-practices)
-- [API Reference](./FRAMEWORK-CONSTITUTION.md#api-reference)
+### Setup Steps
 
-## Examples
+1. **Create a new project**
+```bash
+mkdir my-test-project
+cd my-test-project
+npm init -y
+```
 
-Check the `examples/` directory for complete examples:
+2. **Install the framework**
+```bash
+npm install @shivam/playwright-typescript @playwright/test
+npx playwright install
+```
 
-- [Login Page Object](./examples/pages/login-page.ts)
-- [Login Steps](./examples/steps/login-steps.ts)
-- [Login Test](./examples/tests/login.spec.ts)
+3. **Create project structure**
+```bash
+mkdir -p src/pages src/tests
+```
+
+4. **Create playwright.config.ts**
+```typescript
+import { defineConfig, devices } from '@playwright/test';
+
+export default defineConfig({
+  testDir: './src/tests',
+  use: {
+    baseURL: process.env.BASE_URL || 'http://localhost:3000',
+    trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
+  },
+  projects: [
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+    { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
+    { name: 'webkit', use: { ...devices['Desktop Safari'] } },
+  ],
+});
+```
+
+5. **Create tsconfig.json**
+```json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node"
+  },
+  "include": ["src/**/*"]
+}
+```
+
+6. **Create .env**
+```env
+BASE_URL=http://localhost:3000
+```
 
 ## Available Commands
 
 ```bash
-# Build the framework
-npm run build
-
 # Run tests
 npm test
 
@@ -135,14 +169,8 @@ npm run test:headed
 # Run tests in debug mode
 npm run test:debug
 
-# Lint code
-npm run lint
-
-# Format code
-npm run format
-
-# Clean build artifacts
-npm run clean
+# Run tests in UI mode
+npm run test:ui
 ```
 
 ## Browser Support
@@ -151,39 +179,76 @@ npm run clean
 - ✅ Firefox
 - ✅ WebKit (Safari)
 
-## API Highlights
+## Common Methods
 
-### BasePage Methods
-
+### Navigation
 ```typescript
-// Navigation
-await page.navigateTo('/login');
-
-// Element Interaction
-await page.click(selector);
-await page.fillText(selector, text);
-await page.getText(selector);
-
-// Waits
-await page.waitForElement(selector);
-await page.waitForElementHidden(selector);
-
-// Assertions
-await page.isVisible(selector);
-await page.isEnabled(selector);
+await page.goto('/login');
+await page.url();
+await page.title();
 ```
 
-### BaseStep Methods
+### Element Interaction
+```typescript
+await page.click(selector);
+await page.fill(selector, text);
+await page.textContent(selector);
+await page.getAttribute(selector, 'attribute');
+```
+
+### Waits
+```typescript
+await page.waitForSelector(selector);
+await page.waitForNavigation();
+```
+
+### Assertions
+```typescript
+expect(page.url()).toContain('/dashboard');
+expect(await page.isVisible(selector)).toBeTruthy();
+```
+
+## Best Practices
+
+1. **Use Page Object Model** - Encapsulate page elements and interactions
+2. **Meaningful Names** - Use descriptive names for pages and tests
+3. **Arrange-Act-Assert** - Follow AAA pattern in tests
+4. **Avoid Hard Waits** - Use explicit waits instead of `wait()`
+5. **Configuration** - Use environment variables for configuration
+6. **Error Handling** - Always handle errors gracefully
+
+## Contributing
+
+We welcome contributions! Please feel free to submit pull requests.
+
+## License
+
+MIT License - See [LICENSE](./LICENSE) file for details
+
+## API Reference
+
+### BasePage Class
 
 ```typescript
-// Step Execution
-await step.executeStep(name, async () => { /* ... */ });
+import { BasePage } from '@shivam/playwright-typescript';
 
-// Assertions
-step.assert(condition, message);
-step.assertEqual(actual, expected, message);
-step.assertTrue(value, message);
-step.assertContains(text, substring, message);
+export class MyPage extends BasePage {
+  async navigateTo(url: string) {
+    await this.page.goto(url);
+  }
+
+  async click(selector: string) {
+    await this.page.click(selector);
+  }
+
+  async fill(selector: string, text: string) {
+    await this.page.fill(selector, text);
+  }
+
+  async getText(selector: string) {
+    return await this.page.textContent(selector);
+  }
+}
 ```
 
 ### Logger
@@ -197,19 +262,34 @@ Logger.warn('Warning message');
 Logger.error('Error occurred', error);
 ```
 
-## Best Practices
+### Settings
 
-1. **Use Page Object Model** - Encapsulate page elements and interactions
-2. **Meaningful Names** - Use descriptive names for pages, steps, and tests
-3. **Arrange-Act-Assert** - Follow AAA pattern in tests
-4. **Avoid Hard Waits** - Use explicit waits instead of `wait()`
-5. **Log Appropriately** - Use logging for debugging and reporting
-6. **Configuration** - Use environment variables for configuration
-7. **Error Handling** - Always handle errors gracefully
+```typescript
+import { Settings } from '@shivam/playwright-typescript';
+
+const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+const timeout = 30000;
+```
+
+## Troubleshooting
+
+### Playwright browsers not installed
+```bash
+npx playwright install
+```
+
+### Tests not found
+- Ensure test files are in the `testDir` specified in `playwright.config.ts`
+- Test files should end with `.spec.ts` or `.test.ts`
+
+### Cannot connect to application
+- Verify `BASE_URL` in `.env` file
+- Ensure your application is running
+- Check firewall settings
 
 ## Contributing
 
-We welcome contributions! Please see [FRAMEWORK-CONSTITUTION.md#contributing](./FRAMEWORK-CONSTITUTION.md#contributing) for guidelines.
+Contributions are welcome! Please feel free to submit pull requests.
 
 ## License
 
@@ -217,20 +297,11 @@ MIT License - See [LICENSE](./LICENSE) file for details
 
 ## Support
 
-- 📖 [Documentation](./FRAMEWORK-CONSTITUTION.md)
 - 🐛 [Report Issues](https://github.com/shivam/playwright-typescript/issues)
 - 💬 [Discussions](https://github.com/shivam/playwright-typescript/discussions)
 
-## Version History
-
-### v2.0.5
-- Initial TypeScript/Playwright conversion
-- Page Object Model support
-- BDD-ready architecture
-- Comprehensive logging
-- NPM package distribution
-
 ---
 
-**Maintained by**: Shivam  
-**Last Updated**: November 2024
+**Version**: 2.0.5  
+**Last Updated**: December 2024  
+**License**: MIT

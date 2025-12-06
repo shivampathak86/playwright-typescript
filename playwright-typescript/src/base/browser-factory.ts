@@ -4,9 +4,10 @@
  */
 
 import { chromium, firefox, webkit, Browser, BrowserContext, Page } from '@playwright/test';
-import { BrowserType, IParallelConfig } from '@types/index';
-import { Settings } from '@config/settings';
-import { Logger } from '@helpers/logger';
+import { BrowserType } from '../types';
+import type { IParallelConfig } from '../types';
+import { Settings } from '../config/settings';
+import { Logger } from '../helpers/logger';
 
 /**
  * BrowserFactory class manages browser instance creation and lifecycle

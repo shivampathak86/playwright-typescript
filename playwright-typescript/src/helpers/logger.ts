@@ -5,7 +5,7 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { Settings } from '@config/settings';
+import { Settings } from '../config/settings';
 
 /**
  * Log levels for filtering log output

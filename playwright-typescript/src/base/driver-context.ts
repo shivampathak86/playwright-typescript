@@ -4,8 +4,9 @@
  */
 
 import { Page, BrowserContext } from '@playwright/test';
-import { IParallelConfig, BrowserType } from '@types/index';
-import { Logger } from '@helpers/logger';
+import { BrowserType } from '../types';
+import type { IParallelConfig } from '../types';
+import { Logger } from '../helpers/logger';
 
 /**
  * DriverContext class manages the browser context and page for test execution

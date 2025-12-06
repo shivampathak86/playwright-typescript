@@ -5,10 +5,11 @@
 
 import { test as base, Page, BrowserContext } from '@playwright/test';
 import { BrowserFactory } from './browser-factory';
-import { BrowserType, IParallelConfig } from '@types/index';
-import { Settings } from '@config/settings';
-import { Logger } from '@helpers/logger';
-import { ConfigReader } from '@config/config-reader';
+import { BrowserType } from '../types';
+import type { IParallelConfig } from '../types';
+import { Settings } from '../config/settings';
+import { Logger } from '../helpers/logger';
+import { ConfigReader } from '../config/config-reader';
 
 /**
  * Extended test fixture with browser and driver context
@@ -16,7 +17,7 @@ import { ConfigReader } from '@config/config-reader';
 export const test = base.extend<{
   parallelConfig: IParallelConfig;
 }>({
-  parallelConfig: async ({ browser }, use) => {
+  parallelConfig: async ({}, use) => {
     // Initialize configuration
     ConfigReader.loadConfiguration();
     Logger.initialize();

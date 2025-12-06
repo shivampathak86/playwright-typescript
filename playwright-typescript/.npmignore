@@ -1,0 +1,14 @@
+src/
+examples/
+tests/
+.env.example
+.gitignore
+tsconfig.json
+playwright.config.ts
+*.md
+.eslintrc
+.prettierrc
+node_modules/
+*.log
+.git
+.github

@@ -2,7 +2,7 @@
  * Type definitions for the Shivam Playwright-Typescript
  */
 
-import { Page, BrowserContext } from '@playwright/test';
+import type { Page, BrowserContext } from '@playwright/test';
 
 /**
  * Supported browser types for automation

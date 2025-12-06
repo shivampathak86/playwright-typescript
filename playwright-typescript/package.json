@@ -1,5 +1,5 @@
 {
-  "name": "@leadventure/ari-automation-framework",
+  "name": "@shivam/playwright-typescript",
   "version": "2.0.5",
   "description": "Enterprise-grade automation framework built on Playwright and TypeScript. Designed for scalable, maintainable test automation with support for BDD, parallel execution, and comprehensive reporting.",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
     "test:debug": "playwright test --debug",
     "lint": "eslint src --ext .ts",
     "format": "prettier --write \"src/**/*.ts\"",
-    "clean": "rm -rf dist",
+    "clean": "rmdir /s /q dist",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -23,16 +23,16 @@
     "e2e",
     "framework"
   ],
-  "author": "Piyush Jain",
+  "author": "Shivam",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/leadventure/ari-automation-framework"
+    "url": "https://github.com/shivam/playwright-typescript"
   },
   "bugs": {
-    "url": "https://github.com/leadventure/ari-automation-framework/issues"
+    "url": "https://github.com/shivam/playwright-typescript/issues"
   },
-  "homepage": "https://github.com/leadventure/ari-automation-framework#readme",
+  "homepage": "https://github.com/shivam/playwright-typescript#readme",
   "peerDependencies": {
     "@playwright/test": "^1.40.0"
   },

@@ -3,13 +3,14 @@
  * Contains all configurable parameters for the automation framework
  */
 
-import { BrowserType, ExecutionType, TestType, ITestSettings } from '@types/index';
+import { BrowserType, ExecutionType, TestType } from '../types';
+import type { ITestSettings } from '../types';
 
 /**
  * Settings class manages global configuration for test execution
  * All properties are static and accessible throughout the framework
  */
-export class Settings implements ITestSettings {
+export class Settings {
   /** Timeout for element interactions (in milliseconds) */
   static timeout: number = 30000;
 

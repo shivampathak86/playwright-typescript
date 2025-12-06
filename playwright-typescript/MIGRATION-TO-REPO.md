@@ -5,7 +5,7 @@ This folder contains the complete Shivam Playwright-Typescript (TypeScript/Playw
 ## 📦 What's Included
 
 ```
-ari-automation-framework-ts/
+Shivam-automation-framework-ts/
 ├── src/                              # Framework source code
 │   ├── base/                         # Core classes
 │   ├── config/                       # Configuration

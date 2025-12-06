@@ -18,15 +18,16 @@ export { Logger, LogLevel } from '@helpers/index';
 
 // Types
 export type {
+  IDriverContext,
+  IParallelConfig,
+  ITestSettings,
+  IStepResult,
+} from './types';
+
+export {
   BrowserType,
   ExecutionType,
   TestType,
   StepType,
   TestStatus,
-  IDriverContext,
-  IParallelConfig,
-  ITestSettings,
-  IStepResult,
-} from '@types/index';
-
-export { BrowserType, ExecutionType, TestType, StepType, TestStatus } from '@types/index';
+} from './types';

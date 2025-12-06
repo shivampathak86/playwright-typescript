@@ -5,8 +5,8 @@
 
 import { Page, Locator } from '@playwright/test';
 import { Base } from './base';
-import { IParallelConfig } from '@types/index';
-import { Logger } from '@helpers/logger';
+import type { IParallelConfig } from '../types';
+import { Logger } from '../helpers/logger';
 
 /**
  * BasePage class serves as the foundation for all page object models
@@ -88,7 +88,8 @@ export abstract class BasePage extends Base {
    * @returns Text content
    */
   protected async getText(selector: string): Promise<string> {
-    return this.$(selector).textContent() || '';
+    const text = await this.$(selector).textContent();
+    return text || '';
   }
 
   /**
@@ -224,6 +225,10 @@ export abstract class BasePage extends Base {
    * @returns Result of script execution
    */
   protected async executeScript<T>(script: string, ...args: unknown[]): Promise<T> {
-    return this.getPage().evaluate((s, ...a) => eval(s), script, ...args) as Promise<T>;
+    // eslint-disable-next-line @typescript-eslint/no-implied-eval
+    return this.getPage().evaluate(
+      (s: string) => eval(s),
+      script
+    ) as Promise<T>;
   }
 }

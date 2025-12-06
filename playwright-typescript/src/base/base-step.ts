@@ -4,8 +4,8 @@
  */
 
 import { Base } from './base';
-import { IParallelConfig } from '@types/index';
-import { Logger } from '@helpers/logger';
+import type { IParallelConfig } from '../types';
+import { Logger } from '../helpers/logger';
 
 /**
  * BaseStep class serves as the foundation for all BDD step definitions
