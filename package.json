@@ -1,6 +1,6 @@
 {
   "name": "@shivampathak86/playwright-typescript",
-  "version": "2.0.5",
+  "version": "2.1.5",
   "description": "Enterprise-grade automation framework built on Playwright and TypeScript. Designed for scalable, maintainable test automation with support for BDD, parallel execution, and comprehensive reporting.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
